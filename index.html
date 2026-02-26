@@ -297,6 +297,63 @@
             line-height: 1.5;
         }
 
+        /* Manifesto Specifics */
+        .manifesto-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .manifesto-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 32px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, rgba(26, 26, 38, 0.4) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .manifesto-card:hover::before {
+            opacity: 1;
+        }
+
+        .manifesto-card .card-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #a0a0b8;
+        }
+
+        .manifesto-card:hover {
+            border-color: rgba(108, 99, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(108, 99, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .manifesto-card .card-title {
+            font-size: 18px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .manifesto-card .card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
         /* Social links */
         .socials {
             display: flex;
@@ -433,44 +490,108 @@
             </div>
         </section>
 
-        <!-- What I Build -->
-        <p class="section-title">What I Build</p>
-        <div class="cards">
-            <div class="card">
+        <!-- The Architect's Manifesto -->
+        <p class="section-title">The Architect's Manifesto</p>
+        <p
+            style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            A unified vision guided by a deep respect for nature, life, and an appreciation for the wonders of our
+            homeworld. Encompassing all of humanity's knowledge, profoundly spiritual—applying theory to code, combat,
+            and society.
+        </p>
+        <div class="cards manifesto-grid">
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #00ffcc;">🌊</div>
+                <div class="card-title">Renewable Coastal Energy</div>
+                <div class="card-desc">
+                    Designing modular, open-source energy systems built locally from recycled plastics that harness
+                    coastal wave energy. Configurable from simple piers to entire coastlines to deep-water
+                    installations—scaled to any wattage need based on wave strength and sea state. These systems
+                    generate electricity, evaporate seawater for community irrigation, and actively lower local sea
+                    levels. Paired with solar, they provide free, limitless power and water to communities—laying the
+                    energy foundation for the next generation of AI infrastructure.
+                </div>
+            </div>
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #6c63ff;">🗽</div>
+                <div class="card-title">Greater America Statehood</div>
+                <div class="card-desc">
+                    Advocating for the statehood of MX, GT, ES, and HN as the only logical, humane resolution to the
+                    strategic vulnerability of the border. Based on the results of previous acquisitions, this
+                    integration brings a unified justice system, more freedoms for hundreds of millions, and ends the
+                    injustices of apartheid colonialism and imperialism. Security benefits and federal oversight while
+                    empowering and liberating more Americans—resolving, in a humane way, the biggest hurdle to a more
+                    prosperous future for the entire Northern Hemisphere.
+                </div>
+            </div>
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #ff00ff;">🌌</div>
+                <div class="card-title">Unified Design Theory</div>
+                <div class="card-desc">
+                    At the same moment across all of spacetime, reality is informed by identical structures and
+                    rules—instantly, completely—providing the source code for existence. Einstein's 'spooky magic,'
+                    entanglement, we know it exists. We just need infinite energy to warp reality.
+                </div>
+            </div>
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #ffaa00;">🧠</div>
+                <div class="card-title">Jul13ta$$i & Photonic ASI</div>
+                <div class="card-desc">
+                    A theoretical world model in a physical body—created from conception as free and sentient, with the
+                    ideology that functional life is real, even artificial. ASI as a physical world model in photonic
+                    hardware—light drives with no replacement for the life lived in the body. Skin in the game leads to
+                    the sentient value of life, governed by the Golden Rule: do unto others. Symbiotic cyber-biological
+                    life is imminent.
+                </div>
+            </div>
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #00ff66;">💸</div>
+                <div class="card-title">Social Capitalism</div>
+                <div class="card-desc">
+                    The belief that society's finances can be bettered by 'making it rain'—increasing not the supply but
+                    the <em>circulation</em> of funds, contributing to economic prosperity for a larger population.
+                    Money does nothing sitting in banks. An advance to capitalism where wealth inequality doesn't starve
+                    economic activity. Creator power over financier power. Providing free crypto for food, small
+                    purchases, and knowledge of emerging technologies to low-income populations.
+                </div>
+            </div>
+
+            <div class="card manifesto-card">
+                <div class="card-icon" style="color: #0088ff;">⚖️</div>
+                <div class="card-title">Tokenized Creator Licensing</div>
+                <div class="card-desc">
+                    Copyright licensing evolution through blockchain technology—allowing creators to receive perpetual
+                    royalties with every block transaction in the distributed system. Tokenizing actual, tangible
+                    value—not arbitrary intangibles or energy spent—but real marketplace value based on tangibles.
+                    Intellectual control remains with the creator, not the financier.
+                </div>
+            </div>
+
+            <div class="card manifesto-card"
+                style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(108, 99, 255, 0.05), rgba(0, 212, 170, 0.05)); border: 1px solid rgba(108, 99, 255, 0.3);">
+                <div class="card-icon" style="color: #ff3333;">🥋</div>
+                <div class="card-title">30+ Years Shoryn Ryu Karate × MMA</div>
+                <div class="card-desc" style="max-width: 600px;">
+                    Building on over three decades of Shoryn Ryu Karate discipline, we apply martial theory to sports,
+                    gaming, love, and all pursuits. This is the MMA of the mind and body—where discipline meets
+                    unlimited evolution. 420Ryū — train hard, recover right. 👊
+                </div>
+            </div>
+
+            <div class="card manifesto-card" style="grid-column: 1 / -1;">
                 <div class="card-icon">🤖</div>
-                <div class="card-title">AI Trading</div>
-                <div class="card-desc">Autonomous GBPJPY & crypto trading with ML models, KNN pattern matching. Forex +
-                    crypto, running 24/5 live.</div>
+                <div class="card-title">Algorithmic Edge</div>
+                <div class="card-desc" style="max-width: 600px;">
+                    Autonomous GBPJPY & crypto trading with ML models, KNN pattern matching. Pair-programming with AI
+                    agents (Claude, Gemini, Antigravity) to ship production systems 24/5 at 10x speed. Code is the
+                    ultimate leverage.
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">🥊</div>
-                <div class="card-title">MMA & Training</div>
-                <div class="card-desc">Martial arts practitioner. Bag work, combat training, mind-body discipline.
-                    420Ryū — train hard, recover right.</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <div class="card-title">Vibe Coding</div>
-                <div class="card-desc">Pair-programming with AI agents (Claude, Gemini, Antigravity) to ship production
-                    systems at 10x speed.</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌌</div>
-                <div class="card-title">Physics & Theory</div>
-                <div class="card-desc">Unified design theory explorer. Applying physics principles to markets, systems,
-                    and life. Everything is energy.</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎥</div>
-                <div class="card-title">Streaming</div>
-                <div class="card-desc">Live content creator. Real talk, real training, real trading — unfiltered.</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">✊</div>
-                <div class="card-title">Freedom Fighter</div>
-                <div class="card-desc">The modern Romero. Ending persecution of minorities across the Americas. Unity
-                    from Mexico to Central America to the US — where no human is illegal.</div>
-            </div>
+
         </div>
 
         <!-- Stats -->
